@@ -8,10 +8,10 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class loginController
 {
-	@RequestMapping("/login")
+	@RequestMapping("/customLogin")
 	public String login(Model model)
 	{		
-		return "login";
+		return "customLogin";
 	}
 	
 	@RequestMapping("/")

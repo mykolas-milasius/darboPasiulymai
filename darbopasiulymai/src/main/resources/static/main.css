@@ -1,3 +1,9 @@
+body
+{
+	background: rgb(63,94,251);
+	background: radial-gradient(circle, rgba(63,94,251,0.8015581232492998) 0%, rgba(70,252,222,0.6895133053221288) 100%);
+}
+
 nav
 {
 	display: block;

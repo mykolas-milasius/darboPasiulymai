@@ -41,19 +41,28 @@ public class WebSecurityConfig
         return authProvider;
     }
     
+    //@Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception
     {
         auth.authenticationProvider(authenticationProvider());
     }
  	
+    //@Override
     protected void configure(HttpSecurity http) throws Exception
     {
+    	http
+        .authorizeRequests()
+            .anyRequest().authenticated()
+            .and()
+        .formLogin()
+            .loginPage("/customLogin");
+    	/*
     	http.authorizeRequests()
     		.antMatchers("/", "/home", "/register").permitAll()
     		.antMatchers("/admin/**").hasRole("ADMIN")
     		/*.antMatchers("/applyinti darbui").authenticated();
-    		.anyRequesT().permitAll();
-    		*/
+    		.anyRequest().permitAll();
+    		*//*
     		.and()
     		.formLogin()
 	            .usernameParameter("email")
@@ -61,5 +70,6 @@ public class WebSecurityConfig
 	            .permitAll()
 	        .and()
 	        .logout().logoutSuccessUrl("/").permitAll();
+    	*/
     }
 }
