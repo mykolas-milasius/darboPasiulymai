@@ -37,4 +37,22 @@ public class AppController
 	     
 	    return "register";
 	}
+	
+	@RequestMapping(path="/darbai")
+	public String darbuWEB()
+	{
+		return "darbai";
+	}
+	
+	@RequestMapping(path="/aboutUs")
+	public String apieMus()
+	{
+		return "aboutUs";
+	}
+	
+	@RequestMapping(path="/employersRegister")
+	public String uzsakovuRegistracija()
+	{
+		return "employersRegister";
+	}
 }
