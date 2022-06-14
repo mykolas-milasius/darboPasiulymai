@@ -1,7 +1,13 @@
 package projektas.darbopasiulymai;
 
+import javax.persistence.*;
+
+@Entity
 public class AppliedJobs
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private int id;
 	private int id_user;
 	private int id_offered_job;

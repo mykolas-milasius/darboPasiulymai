@@ -4,35 +4,29 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-public class Job
+public class OfferedJobs
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	
-	private long id;
+	private int id;
 	private String pav;
 	
-	public Job()
-	{
-		super();
-	}
-
-	public Job(long id, String pav)
-	{
+	public OfferedJobs(int id, String pav) {
 		super();
 		this.id = id;
 		this.pav = pav;
 	}
 	
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="job_id", referencedColumnName="id", insertable=false, updatable=false)    
-    private List<OfferedJobs> offered_job;
+	public OfferedJobs() {
+		super();
+	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

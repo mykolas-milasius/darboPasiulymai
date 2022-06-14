@@ -5,12 +5,25 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AppController
 {
 	@Autowired
 	private UserRepository user_repository;
+	
+	@Autowired
+	private AppliedJobsRepository applied_jobs_repository;
+	
+	@Autowired
+	private EmployersRepository employer_repository;
+	
+	@Autowired
+	private JobRepository job_repository;
+	
+	@Autowired
+	private OfferedJobsRepository offered_job_repository;
 	
 	@RequestMapping(path="/home")
 	public String home()
@@ -39,8 +52,12 @@ public class AppController
 	}
 	
 	@RequestMapping(path="/darbai")
-	public String darbuWEB()
+	public String darbuWEB(Model model)
 	{
+		model.addAttribute("darbai", job_repository.findAll());
+		//model.addAttribute("darbdaviai", employer_repository.findAll());
+		//model.addAttribute("siulomi_darbai", offered_job_repository.findAll());
+		
 		return "darbai";
 	}
 	

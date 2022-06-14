@@ -42,3 +42,36 @@ nav a:hover
 {
 	color: white;
 }
+#menu
+{
+	margin: auto;
+	width: 84%;
+	padding: 5px;
+	bottom: 0;
+	background-color: #E6E6FA;
+	outline: 2px dashed blue;
+	overflow: hidden;
+	position: fixed;
+}
+#my_logo
+{
+	width: 60px;
+	height: 60px;
+}
+#page-header
+{
+	margin: auto;
+	height: 75px;
+	width: 84%;
+	padding: 10px;
+	background-color: #E6E6FA;
+	outline: 2px dashed blue;
+}
+#body
+{
+	margin: auto;
+	width: 84%;
+	padding: 25px;
+	background-color: #E6E6FA;
+	outline: 2px dashed blue;
+}

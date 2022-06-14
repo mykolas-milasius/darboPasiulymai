@@ -1,18 +1,26 @@
 package projektas.darbopasiulymai;
 
-public class Employer
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+public class Employers
 {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private long id;
 	private String pav;
 	private String email;
 	private String telefono_numeris;
 	
-	public Employer()
+	public Employers()
 	{
 		super();
 	}
 	
-	public Employer(long id, String pav, String email, String telefono_numeris)
+	public Employers(long id, String pav, String email, String telefono_numeris)
 	{
 		super();
 		this.id = id;
@@ -21,6 +29,10 @@ public class Employer
 		this.telefono_numeris = telefono_numeris;
 	}
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="employer_id", referencedColumnName="id", insertable=false, updatable=false)    
+    private List<OfferedJobs> offered_job;
+	
 	public long getId() {
 		return id;
 	}
