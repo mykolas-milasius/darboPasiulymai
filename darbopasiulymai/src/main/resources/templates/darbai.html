@@ -28,6 +28,13 @@
 			overflow: hidden;
 			position: fixed;
 		}
+		table,tr,th,td
+		{
+			border: 3px solid black;
+			text-align:center;
+			margin-left:auto; 
+		    margin-right:auto;
+		}
     </style>
 </head>
 <body>
@@ -43,14 +50,39 @@
 	</div>
 	<div id="body">
 		<div class ="row d-flex justify-content-center align-items-center">
+			<div class ="row d-flex justify-content-center align-items-center">
+				<div class="col-4">
+					<select class="form-select" id="job-select">
+						<option selected>Pasirinkite norimą profesiją</option>
+						<option>Junior Developer</option>
+						<option>Developer</option>
+						<option>Senior Developer</option>
+					</select>
+				</div>
+				<div class="col-4">
+					<div class="input-group">
+					  <input type="search" id="search_header" class="form-control rounded" placeholder="Ieškoti" aria-label="Search" aria-describedby="search-addon" />
+					  <button type="button" class="btn btn-outline-primary">Ieškoti</button>
+					</div>
+				</div>
+			</div>
 			<div>
 				<table>
+					<tr>
+						<th>Nr.</th>
+						<th>Įmonės pavadinimas</th>
+						<th>Profesijos pavadinimas</th>
+						<th>Patirtis</th>
+						<th>Aprašymas</th>
+					</tr>
 					<tr th:each="darbas : ${darbai}">
 						<td th:text="${darbas.getId()}"></td>
-						<td th:text="${darbas.getPav()}"></td>
+						<td th:text="${darbas.getEmployer().getPav()}"></td>
+						<td th:text="${darbas.getJob().getPav()}"></td>
+						<td th:text="${darbas.getRequired_experience()}"></td>
+						<td th:text="${darbas.getText()}"></td>
 					</tr>
 				</table>
-				test
 			</div>
 		</div>
 	</div>

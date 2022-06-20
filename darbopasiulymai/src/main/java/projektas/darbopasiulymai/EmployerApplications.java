@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-public class Employers
+public class EmployerApplications
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -15,30 +15,18 @@ public class Employers
 	private String email;
 	private String telefono_nr;
 	
-	public Employers()
+	public EmployerApplications()
 	{
 		super();
 	}
 	
-	public Employers(Integer id, String pav, String email, String telefono_nr)
+	public EmployerApplications(Integer id, String pav, String email, String telefono_nr)
 	{
 		super();
 		this.id = id;
 		this.pav = pav;
 		this.email = email;
 		this.telefono_nr = telefono_nr;
-	}
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="employer_id", referencedColumnName="id", insertable=false, updatable=false)    
-    private List<OfferedJobs> offered_job;
-    
-	public List<OfferedJobs> getOffered_job() {
-		return offered_job;
-	}
-
-	public void setOffered_job(List<OfferedJobs> offered_job) {
-		this.offered_job = offered_job;
 	}
 
 	public long getId() {

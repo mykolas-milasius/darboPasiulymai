@@ -27,6 +27,14 @@ public class Job
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="job_id", referencedColumnName="id", insertable=false, updatable=false)    
     private List<OfferedJobs> offered_job;
+    
+	public List<OfferedJobs> getOffered_job() {
+		return offered_job;
+	}
+
+	public void setOffered_job(List<OfferedJobs> offered_job) {
+		this.offered_job = offered_job;
+	}
 
 	public long getId() {
 		return id;
