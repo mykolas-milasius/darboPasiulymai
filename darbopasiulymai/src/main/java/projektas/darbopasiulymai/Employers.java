@@ -14,19 +14,21 @@ public class Employers
 	private String pav;
 	private String email;
 	private String telefono_nr;
+	private int patvirtinta;
 	
 	public Employers()
 	{
-		super();
+		//super();
 	}
 	
-	public Employers(Integer id, String pav, String email, String telefono_nr)
+	public Employers(Integer id, String pav, String email, String telefono_nr, int patvirtinta)
 	{
 		super();
 		this.id = id;
 		this.pav = pav;
 		this.email = email;
 		this.telefono_nr = telefono_nr;
+		this.patvirtinta = patvirtinta;
 	}
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -41,7 +43,7 @@ public class Employers
 		this.offered_job = offered_job;
 	}
 
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -71,5 +73,13 @@ public class Employers
 
 	public void setTelefono_nr(String telefono_nr) {
 		this.telefono_nr = telefono_nr;
+	}
+
+	public int getPatvirtinta() {
+		return patvirtinta;
+	}
+
+	public void setPatvirtinta(int patvirtinta) {
+		this.patvirtinta = patvirtinta;
 	}
 }

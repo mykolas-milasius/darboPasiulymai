@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 public class loginController
 {
 	@RequestMapping("/customLogin")
-	public String login(Model model)
+	public String login_c(Model model)
 	{		
 		return "customLogin";
 	}
@@ -18,5 +18,17 @@ public class loginController
 	public String home()
 	{
 		return "home";
+	}
+	
+	@GetMapping("/login")
+	public String login(Model model)
+	{		
+		return "login";
+	}
+	
+	@GetMapping("/logout")
+	public String logout(Model model)
+	{
+		return "redirect:login";
 	}
 }
