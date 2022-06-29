@@ -8,19 +8,13 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class loginController
 {
-	@RequestMapping("/customLogin")
-	public String login_c(Model model)
-	{		
-		return "customLogin";
-	}
-	
 	@RequestMapping("/")
 	public String home()
 	{
 		return "home";
 	}
 	
-	@GetMapping("/login")
+	@RequestMapping("/login")
 	public String login(Model model)
 	{		
 		return "login";
